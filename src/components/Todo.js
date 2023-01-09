@@ -3,7 +3,7 @@ import React from 'react';
 export const Todo = (e) => {
     return (
         <div className='todo' id={`todo-${e.id}`}>
-            <div className='todo-text'>
+            <div className='todo-title'>
                 {e.title}
             </div>
             <div className='todo-status'>
