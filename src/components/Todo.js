@@ -1,10 +1,13 @@
 import React from 'react';
 
 export const Todo = (e) => {
+
     return (
         <div>
-            <ul>
+
+            <ol start={e.id}>
                 <li>
+          
                     <div className='todo' id={`todo-${e.id}`}>
                         <div className='todo-title'>
                             {e.title}
@@ -13,8 +16,9 @@ export const Todo = (e) => {
                             {e.completed ? "Completed" : "InCompleted"}
                         </div>
                     </div>
+
                 </li>
-            </ul>
+            </ol>
         </div>
     )
 }
