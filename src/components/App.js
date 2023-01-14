@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/App.css';
 import { Loader } from './Loader';
-import { Todo } from './Todo';
+import Todo from './Todo';
 
 const App = () => {
     useEffect(() => { fetchTodo(); }, []);
@@ -30,9 +30,11 @@ const App = () => {
                     <input onChange={(e) => { setIncomplete(e.target.checked) }} type="checkbox" checked={incomplete} id='incompleted-checkbox' /> InCompleted
                 </div>
             </div>
-            {loader ? <Loader /> : todo.map((e) => {
-                if (completed === e.completed || incomplete !== e.completed) {
-                    return <Todo key={e.id} id={e.id} title={e.title} completed={e.completed} />
+
+            {/* {loader ? <Loader /> : <Todo />} */}
+            {loader ? <Loader /> : todo?.map((i) => {
+                if (completed === i.completed || incomplete !== i.completed) {
+                    return <Todo key={i.id} id={i.id} title={i.title} completed={i.completed} />
                 }
             }
             )}
